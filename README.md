@@ -3,7 +3,8 @@
 ### **Live Demo:** [Click Here to Chat with the Agent](https://my-streamlit-service-1042834751077.us-central1.run.app/)
 
 ## 📋 Project Overview
-This project is a **Serverless Retrieval-Augmented Generation (RAG)** application designed to modernize the recruitment experience. Instead of reading a static PDF resume, recruiters can interrogate a **Generative AI Agent** to ask specific questions about my technical experience, architectural philosophy, and background.
+This project is a **Serverless Retrieval-Augmented Generation (RAG)** application designed to modernize the recruitment experience. 
+Instead of reading a static PDF resume, recruiters can interrogate a **Generative AI Agent** to ask specific questions about my technical experience, architectural philosophy, and background.
 
 This application demonstrates the bridge between **Legacy Data** (static text files) and **Modern Cloud Architecture** (Containerized Microservices on Google Cloud).
 
