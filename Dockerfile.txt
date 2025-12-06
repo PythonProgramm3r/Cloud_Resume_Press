@@ -1,0 +1,24 @@
+# Use an official Python runtime as a parent image
+FROM python:3.9-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the requirements file into the container at /app
+COPY requirements.txt .
+
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of your application code into the container at /app
+COPY . .
+
+# Expose the port that Streamlit will listen on
+# Cloud Run typically expects applications to listen on the port specified by the PORT environment variable
+ENV PORT 8080
+EXPOSE $PORT
+
+# Run the Streamlit application
+# Crucially, we set --server.address to 0.0.0.0 to listen on all interfaces
+# and enable CORS and XSRF protection for public access.
+CMD ["streamlit", "run", "app.py", "--server.port", "8080", "--server.address", "0.0.0.0", "--server.enableCORS", "true", "--server.enableXsrfProtection", "true"]
