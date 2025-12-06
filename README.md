@@ -22,3 +22,4 @@ graph LR
         Logic -- API Call --> Vertex[Google Vertex AI (Gemini Pro)]
     end
     Vertex -- Generative Response --> User
+```
