@@ -14,12 +14,11 @@ The system follows a standard microservice pattern, containerized with Docker an
 
 ```mermaid
 graph LR
-    User[Recruiter/User] -- HTTPS --> CloudRun[Google Cloud Run Container]
+    User["Recruiter/User"] -- HTTPS --> CloudRun["Google Cloud Run Container"]
     subgraph "Microservice Logic (Python)"
-        CloudRun -- Streamlit --> UI[Frontend Interface]
-        UI -- Query --> Logic[Context Injection Engine]
-        Logic -- Read --> Docs[Local Knowledge Base (Resume/Ethos)]
-        Logic -- API Call --> Vertex[Google Vertex AI (Gemini Pro)]
+        CloudRun -- Streamlit --> UI["Frontend Interface"]
+        UI -- Query --> Logic["Context Injection Engine"]
+        Logic -- Read --> Docs["Local Knowledge Base (Resume/Ethos)"]
+        Logic -- API Call --> Vertex["Google Vertex AI (Gemini Pro)"]
     end
     Vertex -- Generative Response --> User
-```
